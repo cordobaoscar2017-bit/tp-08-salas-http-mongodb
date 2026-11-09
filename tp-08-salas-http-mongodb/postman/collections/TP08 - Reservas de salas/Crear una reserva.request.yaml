@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:3000/api/reservas
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"estudiante\": \"María López\",\r
+
+    \  \"email\": \"maria.lopez@example.com\",\r
+
+    \  \"sala\": \"Sala Sur\",\r
+
+    \  \"fecha\": \"2026-11-12\",\r
+
+    \  \"turno\": \"Tarde\",\r
+
+    \  \"personas\": 3\r
+
+    }"
+order: 3000

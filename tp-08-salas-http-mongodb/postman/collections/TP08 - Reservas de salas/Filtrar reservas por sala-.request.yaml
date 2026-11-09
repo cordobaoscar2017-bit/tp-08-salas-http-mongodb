@@ -1,0 +1,7 @@
+$kind: http-request
+name: Filtrar reservas por sala.
+url: http://localhost:3000/api/reservas?sala=Sala%20Norte
+method: GET
+queryParams:
+  sala: Sala%20Norte
+order: 5000

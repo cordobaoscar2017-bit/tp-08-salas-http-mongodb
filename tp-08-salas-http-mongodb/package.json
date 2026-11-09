@@ -1,0 +1,25 @@
+{
+"name": "tp-08-salas-http-mongodb",
+"description": "Trabajo Práctico 08 - API HTTP y persistencia de reservas con MongoDB",
+"version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check src/app.js && node --check src/config/base-datos.js && node --check src/config/entorno.js && node --check src/controladores/reservas.js && node --check src/controladores/api-reservas.js && node --check src/middleware/reservas.js && node --check src/middleware/solicitudes.js && node --check src/middleware/errores.js && node --check src/modelos/reservas.js && node --check src/rutas/reservas.js && node --check src/rutas/api-reservas.js && node --check src/servicios/reservas.js && node --check scripts/comprobar-conexion.js && node --check scripts/crear-reserva.js && node --check scripts/listar-reservas.js",
+    "format": "prettier --write \"src/**/*.js\" \"scripts/**/*.js\"",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^9.11.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10"
+  }
+}

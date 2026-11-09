@@ -1,0 +1,38 @@
+<h1><%= titulo %></h1>
+
+<% if (reservas.length === 0) { %>
+  <p>No hay reservas registradas.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Estudiante</th>
+        <th>Sala</th>
+        <th>Fecha</th>
+        <th>Turno</th>
+        <th>Personas</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservas.forEach((reserva) => { %>
+        <tr>
+          <td><%= reserva.estudiante %></td>
+          <td><%= reserva.sala %></td>
+          <td><%= reserva.fecha %></td>
+          <td><%= reserva.turno %></td>
+          <td><%= reserva.personas %></td>
+          <td><%= reserva.estado %></td>
+          <td>
+            <a href="/reservas/<%= reserva.id %>">Ver detalle</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<p>
+  <a href="/reservas/nueva">Crear nueva reserva</a>
+</p>

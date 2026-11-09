@@ -1,0 +1,108 @@
+<section>
+  <h2>Nueva reserva</h2>
+
+  <% if (typeof error !== "undefined") { %>
+    <div class="error" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+
+  <form action="/reservas" method="POST">
+
+    <div>
+      <label for="estudiante">Estudiante:</label>
+      <input
+        type="text"
+        id="estudiante"
+        name="estudiante"
+        value="<%= valores?.estudiante || '' %>"
+      >
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value="<%= valores?.email || '' %>"
+      >
+    </div>
+
+    <div>
+      <label for="sala">Sala:</label>
+      <select id="sala" name="sala">
+
+        <option value="">Seleccione una sala</option>
+
+        <% salas.forEach(sala => { %>
+          <option
+            value="<%= sala %>"
+            <%= valores?.sala === sala ? "selected" : "" %>
+          >
+            <%= sala %>
+          </option>
+        <% }) %>
+
+      </select>
+    </div>
+
+    <div>
+      <label for="fecha">Fecha:</label>
+      <input
+        type="date"
+        id="fecha"
+        name="fecha"
+        value="<%= valores?.fecha || '' %>"
+      >
+    </div>
+
+    <div>
+      <label for="turno">Turno:</label>
+      <select id="turno" name="turno">
+
+        <option value="">Seleccione un turno</option>
+
+        <option
+          value="Mañana"
+          <%= valores?.turno === "Mañana" ? "selected" : "" %>
+        >
+          Mañana
+        </option>
+
+        <option
+          value="Tarde"
+          <%= valores?.turno === "Tarde" ? "selected" : "" %>
+        >
+          Tarde
+        </option>
+
+        <option
+          value="Noche"
+          <%= valores?.turno === "Noche" ? "selected" : "" %>
+        >
+          Noche
+        </option>
+
+      </select>
+    </div>
+
+    <div>
+      <label for="personas">Cantidad de personas:</label>
+      <input
+        type="number"
+        id="personas"
+        name="personas"
+        min="1"
+        max="6"
+        value="<%= valores?.personas || '' %>"
+      >
+    </div>
+
+    <div class="acciones">
+      <button type="submit">Guardar reserva</button>
+      <a href="/reservas">Cancelar</a>
+    </div>
+
+  </form>
+</section>

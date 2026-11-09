@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:3000/api/reservas?sala=Sala%20Norte&sala=Sala%20Sur
+method: GET
+queryParams:
+  - key: sala
+    value: Sala%20Norte
+    disabled: false
+    description: ""
+  - key: sala
+    value: Sala%20Sur
+    disabled: false
+    description: ""
+examples: .resources/Probar filtro sala repetido.resources/examples
+order: 7000

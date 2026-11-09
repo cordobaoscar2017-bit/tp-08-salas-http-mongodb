@@ -1,0 +1,7 @@
+$kind: http-request
+name: Consultar sala sin resultados.
+url: http://localhost:3000/api/reservas?sala=Sala%20Este
+method: GET
+queryParams:
+  sala: Sala%20Este
+order: 6000
